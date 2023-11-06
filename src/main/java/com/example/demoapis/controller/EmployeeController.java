@@ -7,6 +7,7 @@ import com.example.demoapis.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 
@@ -18,7 +19,7 @@ public class EmployeeController {
     EmployeeService employeeService;
 
     @PostMapping("/employee")
-    public Employee createEmployee(@RequestBody CreateEmployeeRequest createEmployeeRequest) {
+    public Employee createEmployee(@RequestBody @Valid CreateEmployeeRequest createEmployeeRequest) {
 
         return employeeService.create(createEmployeeRequest);
     }
@@ -35,7 +36,7 @@ public class EmployeeController {
 
     @PutMapping("/employee/{employeeId}")
     public Employee updateEmployee(@PathVariable("employeeId")String id,
-                                   @RequestBody UpdateEmployeeRequest updateEmployeeRequest){
+                                   @RequestBody @Valid UpdateEmployeeRequest updateEmployeeRequest){
 
         return employeeService.update(id, updateEmployeeRequest);
     }

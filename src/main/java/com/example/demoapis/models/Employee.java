@@ -1,10 +1,17 @@
 package com.example.demoapis.models;
 
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Builder        //This annotation helps in using builder pattern for employee
 public class Employee {
 
     private String id;
     private String name;
-    private String age;
+    private int age;
     private Department department;
 
     private Address address;
@@ -12,59 +19,4 @@ public class Employee {
     private Long createdOn;
     private Long updatedOn;
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAge() {
-        return age;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
-    }
-
-    public Department getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(Department department) {
-        this.department = department;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
-    public Long getCreatedOn() {
-        return createdOn;
-    }
-
-    public void setCreatedOn(Long createdOn) {
-        this.createdOn = createdOn;
-    }
-
-    public Long getUpdatedOn() {
-        return updatedOn;
-    }
-
-    public void setUpdatedOn(Long updatedOn) {
-        this.updatedOn = updatedOn;
-    }
 }
